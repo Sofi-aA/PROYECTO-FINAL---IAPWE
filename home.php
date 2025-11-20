@@ -4,13 +4,33 @@ session_start();
 if(!isset($_SESSION['logueado']) || $_SESSION['logueado'] !== true){
     header("location: login.php");
     exit;
-}
+};
+
+// fondo
+ if (isset($_GET["modo"])){ 
+      if (!isset($_SESSION["modo"])){ 
+          $_SESSION["modo"] = "oscuro"; 
+  } else { 
+      if ($_SESSION["modo"] == "claro") { 
+         $_SESSION["modo"] = "oscuro";
+        } else {
+            $_SESSION["modo"] = "claro";
+        } 
+    } 
+ } 
+
+ 
+
+$modo = $_SESSION["modo"] ?? "claro"; 
+$css = "$modo.css"; 
+
 ?>
 
 <!DOCTYPE html>
 <html>
 <head>
     <title>Voleibol</title>
+    <link rel="stylesheet" href="<?= $css ?>">
     <style>
         body { font-family: Arial; max-width: 800px; margin: 0 auto; padding: 20px; }
         .header { background: #007bff; color: white; padding: 15px; text-align: center; }
@@ -64,6 +84,7 @@ if(!isset($_SESSION['logueado']) || $_SESSION['logueado'] !== true){
     <div class="footer">
         <p>Sofía RODRIGUES CAVALCANTI</p>
         <p>2do ASIR - IAPWE</p>
+        <a href="?modo=cambiar">TEMA</a>
     </div>
 </body>
 </html>
