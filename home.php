@@ -44,6 +44,24 @@ $css = "$modo.css";
             padding: 20px;
             border-top: 1px solid #ccc;
         }
+                .imagen-voleibol {
+            width: 100%;
+            max-width: 600px;
+            margin: 20px auto;
+            text-align: center;
+        }
+        .imagen-voleibol img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        .pie-foto {
+            font-style: italic;
+            color: #666;
+            margin-top: 8px;
+            font-size: 0.9em;
+        }
     </style>
 </head>
 <body>
@@ -60,6 +78,11 @@ $css = "$modo.css";
         
         <p>El voleibol es un deporte que se juega con dos equipos de 6 jugadores.</p>
         
+        <div class="imagen-voleibol">
+            <img src="img/voleibol2.jpg" alt="Partido de voleibol en acción">
+            <p class="pie-foto">Partido de voleibol profesional</p>
+        </div>
+
         <h3>Reglas básicas:</h3>
         <ul>
             <li>6 jugadores por equipo</li>
