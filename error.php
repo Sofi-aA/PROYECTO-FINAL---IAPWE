@@ -31,17 +31,30 @@ if(file_exists($fichero)){
 <body>
 
     <h1>Error</h1>
-    
+    <style>
+            .footer { 
+            text-align: center; 
+            color: #666666; /* COLOR GRIS */
+            margin-top: 40px;
+            padding: 20px;
+            border-top: 1px solid #ccc;
+        }
+    </style>
+
+
     <div class="error">
         <p>Ha excedido el número máximo permitido de</p>
-        <p>intentos de sesión, debería esperar 15</p>
-        <p>segundos hasta poder intentarlo de nuevo,</p>
-        <p>pero todavía no hemos visto cómo hacer eso,</p>
-        <p>así que puede Volver al login.</p>
+        <p>intentos de sesión.</p>
+        <p>Volver intentarlo 👇​</p>
     </div>
     
     <br>
     <a href="logout.php" class="btn">Volver al login</a>
 
+
+        <div class="footer">
+        <p>Sofía RODRIGUES CAVALCANTI</p>
+        <p>2do ASIR - IAPWE</p>
+    </div>
 </body>
 </html>
