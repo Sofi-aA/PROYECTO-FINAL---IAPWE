@@ -69,6 +69,7 @@ $css = "$modo.css";
     <div class="header">
         <h1>Voleibol</h1>
         <div class="menu">
+            <a href="cuestionario.php">Cuestionario</a>
             <a href="logout.php">Salir</a>
         </div>
     </div>
