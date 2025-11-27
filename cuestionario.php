@@ -42,72 +42,12 @@ $css = "$modo.css";
             border-top: 1px solid #ccc;
         }
         
-        /* Estilos específicos del cuestionario */
-        .pregunta {
-            margin-bottom: 25px;
-            padding: 15px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            background-color: #f9f9f9;
-        }
-        
-        .pregunta h3 {
-            margin-top: 0;
-            color: #333;
-        }
-        
-        .opciones {
-            margin-left: 20px;
-        }
-        
-        .opcion {
-            margin: 8px 0;
-        }
-        
-        .boton-enviar {
-            background-color: #007bff;
-            color: white;
-            border: none;
-            padding: 12px 25px;
-            font-size: 16px;
-            border-radius: 5px;
-            cursor: pointer;
-            margin-top: 20px;
-        }
-        
-        .boton-enviar:hover {
-            background-color: #0056b3;
-        }
-        
-        .resultado {
-            margin-top: 30px;
-            padding: 15px;
-            border-radius: 5px;
-            display: none;
-        }
-        
-        .correcto {
-            background-color: #d4edda;
-            color: #155724;
-            border: 1px solid #c3e6cb;
-        }
-        
-        .incorrecto {
-            background-color: #f8d7da;
-            color: #721c24;
-            border: 1px solid #f5c6cb;
-        }
-        
-        .volver {
-            display: inline-block;
-            margin-top: 20px;
-            color: #007bff;
-            text-decoration: none;
-        }
-        
-        .volver:hover {
-            text-decoration: underline;
-        }
+        .pregunta { margin-bottom: 25px; padding: 15px; border: 1px solid #ddd; }
+        .boton-enviar { background: #007bff; color: white; border: none; padding: 12px 25px; cursor: pointer; }
+        .resultado { margin-top: 30px; padding: 15px; display: none; }
+        .correcto { background: #d4edda; color: #155724; }
+        .incorrecto { background: #f8d7da; color: #721c24; }
+        .volver { display: block; margin-top: 20px; color: #007bff; }
     </style>
 </head>
 <body>
@@ -115,137 +55,51 @@ $css = "$modo.css";
     <div class="header">
         <h1>Cuestionario de Voleibol</h1>
         <div class="menu">
-            <a href="index.php">Volver a Inicio</a>
+            <a href="home.php">Volver a Inicio</a>
             <a href="logout.php">Salir</a>
         </div>
     </div>
 
     <div class="contenido">
         <h2>Pon a prueba tus conocimientos sobre voleibol</h2>
-        <p>Responde las siguientes preguntas basadas en la información de la página principal.</p>
         
         <form id="cuestionario">
-            <!-- Pregunta 1 -->
+            <!-- Pregunta 1: Tipo escribir -->
             <div class="pregunta">
-                <h3>1. ¿Cuántos jugadores hay en cada equipo de voleibol?</h3>
-                <div class="opciones">
-                    <div class="opcion">
-                        <input type="radio" id="p1a" name="p1" value="a">
-                        <label for="p1a">5 jugadores</label>
-                    </div>
-                    <div class="opcion">
-                        <input type="radio" id="p1b" name="p1" value="b">
-                        <label for="p1b">6 jugadores</label>
-                    </div>
-                    <div class="opcion">
-                        <input type="radio" id="p1c" name="p1" value="c">
-                        <label for="p1c">7 jugadores</label>
-                    </div>
-                </div>
+                <h3>1. ¿Qué jugador organiza el ataque del equipo?</h3>
+                <input type="text" name="p1" placeholder="Escribe aquí">
             </div>
             
-            <!-- Pregunta 2 -->
+            <!-- Pregunta 2: Tipo número -->
             <div class="pregunta">
-                <h3>2. ¿Cuál es el número máximo de toques que puede dar un equipo antes de pasar el balón al campo contrario?</h3>
-                <div class="opciones">
-                    <div class="opcion">
-                        <input type="radio" id="p2a" name="p2" value="a">
-                        <label for="p2a">2 toques</label>
-                    </div>
-                    <div class="opcion">
-                        <input type="radio" id="p2b" name="p2" value="b">
-                        <label for="p2b">3 toques</label>
-                    </div>
-                    <div class="opcion">
-                        <input type="radio" id="p2c" name="p2" value="c">
-                        <label for="p2c">4 toques</label>
-                    </div>
-                </div>
+                <h3>2. ¿Cuántos jugadores por equipo?</h3>
+                <input type="number" name="p2" placeholder="Número">
             </div>
             
-            <!-- Pregunta 3 -->
+            <!-- Pregunta 3: Tipo test -->
             <div class="pregunta">
-                <h3>3. ¿Qué sucede si el balón toca el suelo durante el juego?</h3>
-                <div class="opciones">
-                    <div class="opcion">
-                        <input type="radio" id="p3a" name="p3" value="a">
-                        <label for="p3a">Se considera falta y punto para el equipo contrario</label>
-                    </div>
-                    <div class="opcion">
-                        <input type="radio" id="p3b" name="p3" value="b">
-                        <label for="p3b">El juego continúa normalmente</label>
-                    </div>
-                    <div class="opcion">
-                        <input type="radio" id="p3c" name="p3" value="c">
-                        <label for="p3c">Se repite la jugada</label>
-                    </div>
-                </div>
+                <h3>3. ¿Máximo de toques por equipo?</h3>
+                <input type="radio" name="p3" value="2"> 2 toques<br>
+                <input type="radio" name="p3" value="3"> 3 toques<br>
+                <input type="radio" name="p3" value="4"> 4 toques
             </div>
             
-            <!-- Pregunta 4 -->
+            <!-- Pregunta 4: Tipo escribir -->
             <div class="pregunta">
-                <h3>4. ¿A cuántos sets se juega normalmente un partido de voleibol?</h3>
-                <div class="opciones">
-                    <div class="opcion">
-                        <input type="radio" id="p4a" name="p4" value="a">
-                        <label for="p4a">Al mejor de 3 o 5 sets</label>
-                    </div>
-                    <div class="opcion">
-                        <input type="radio" id="p4b" name="p4" value="b">
-                        <label for="p4b">Siempre a 3 sets</label>
-                    </div>
-                    <div class="opcion">
-                        <input type="radio" id="p4c" name="p4" value="c">
-                        <label for="p4c">Solo a 5 sets</label>
-                    </div>
-                </div>
+                <h3>4. ¿Jugador con uniforme diferente?</h3>
+                <input type="text" name="p4" placeholder="Escribe aquí">
             </div>
             
-            <!-- Pregunta 5 -->
+            <!-- Pregunta 5: Tipo número -->
             <div class="pregunta">
-                <h3>5. ¿Qué jugador tiene la función principal de organizar el ataque del equipo?</h3>
-                <div class="opciones">
-                    <div class="opcion">
-                        <input type="radio" id="p5a" name="p5" value="a">
-                        <label for="p5a">Colocador</label>
-                    </div>
-                    <div class="opcion">
-                        <input type="radio" id="p5b" name="p5" value="b">
-                        <label for="p5b">Central</label>
-                    </div>
-                    <div class="opcion">
-                        <input type="radio" id="p5c" name="p5" value="c">
-                        <label for="p5c">Libero</label>
-                    </div>
-                </div>
+                <h3>5. ¿Sets que se juegan?</h3>
+                <input type="number" name="p5" placeholder="Número">
             </div>
             
-            <!-- Pregunta 6 -->
-            <div class="pregunta">
-                <h3>6. ¿Qué jugador tiene un rol defensivo especial y viste un uniforme de color diferente?</h3>
-                <div class="opciones">
-                    <div class="opcion">
-                        <input type="radio" id="p6a" name="p6" value="a">
-                        <label for="p6a">Libero</label>
-                    </div>
-                    <div class="opcion">
-                        <input type="radio" id="p6b" name="p6" value="b">
-                        <label for="p6b">Jugador de punta</label>
-                    </div>
-                    <div class="opcion">
-                        <input type="radio" id="p6c" name="p6" value="c">
-                        <label for="p6c">Jugador opuesto</label>
-                    </div>
-                </div>
-            </div>
-            
-            <button type="button" class="boton-enviar" onclick="calcularResultado()">Enviar respuestas</button>
+            <button type="button" class="boton-enviar" onclick="calcular()">Enviar respuestas</button>
         </form>
         
         <div id="resultado" class="resultado"></div>
-        
-        <a href="index.php" class="volver">← Volver a la página principal</a>
-    </div>
 
     <div class="footer">
         <p>Sofía RODRIGUES CAVALCANTI</p>
@@ -254,62 +108,52 @@ $css = "$modo.css";
     </div>
 
     <script>
-        // Respuestas correctas
-        const respuestasCorrectas = {
-            p1: "b", // 6 jugadores
-            p2: "b", // 3 toques
-            p3: "a", // Falta y punto para el equipo contrario
-            p4: "a", // Al mejor de 3 o 5 sets
-            p5: "a", // Colocador
-            p6: "a"  // Libero
-        };
-        
-        function calcularResultado() {
-            let puntuacion = 0;
-            const totalPreguntas = Object.keys(respuestasCorrectas).length;
+        function calcular() {
+            // Respuestas correctas
+            var correctas = {
+                p1: "colocador",
+                p2: 6,
+                p3: "3",
+                p4: "libero", 
+                p5: 3
+            };
             
-            // Verificar cada pregunta
-            for (let i = 1; i <= totalPreguntas; i++) {
-                const pregunta = "p" + i;
-                const respuestaSeleccionada = document.querySelector(`input[name="${pregunta}"]:checked`);
+            var puntos = 0;
+            var total = 5;
+            
+            // Revisar cada pregunta
+            for(var i = 1; i <= total; i++) {
+                var pregunta = "p" + i;
+                var respuesta = document.querySelector('[name="' + pregunta + '"]');
+                var valor = "";
                 
-                if (respuestaSeleccionada && respuestaSeleccionada.value === respuestasCorrectas[pregunta]) {
-                    puntuacion++;
+                if(respuesta.type == "text") {
+                    valor = respuesta.value.toLowerCase().trim();
+                } else if(respuesta.type == "number") {
+                    valor = parseInt(respuesta.value);
+                } else if(respuesta.type == "radio") {
+                    var seleccionada = document.querySelector('[name="' + pregunta + '"]:checked');
+                    valor = seleccionada ? seleccionada.value : "";
+                }
+                
+                if(valor == correctas[pregunta]) {
+                    puntos++;
                 }
             }
             
             // Mostrar resultado
-            const resultadoDiv = document.getElementById("resultado");
-            const porcentaje = (puntuacion / totalPreguntas) * 100;
+            var resultado = document.getElementById("resultado");
+            var porcentaje = (puntos / total) * 100;
             
-            let mensaje = "";
-            if (porcentaje >= 80) {
-                mensaje = `<div class="correcto">
-                    <h3>¡Excelente! Obtuviste ${puntuacion} de ${totalPreguntas} puntos (${porcentaje.toFixed(0)}%)</h3>
-                    <p>Demuestras un gran conocimiento sobre voleibol.</p>
-                </div>`;
-            } else if (porcentaje >= 60) {
-                mensaje = `<div class="correcto">
-                    <h3>¡Buen trabajo! Obtuviste ${puntuacion} de ${totalPreguntas} puntos (${porcentaje.toFixed(0)}%)</h3>
-                    <p>Tienes buenos conocimientos sobre voleibol.</p>
-                </div>`;
-            } else if (porcentaje >= 40) {
-                mensaje = `<div class="incorrecto">
-                    <h3>Obtuviste ${puntuacion} de ${totalPreguntas} puntos (${porcentaje.toFixed(0)}%)</h3>
-                    <p>Puedes mejorar repasando la información en la página principal.</p>
-                </div>`;
+            if(porcentaje >= 60) {
+                resultado.className = "resultado correcto";
+                resultado.innerHTML = "<h3>¡Bien! Tienes " + puntos + " de " + total + " puntos</h3>";
             } else {
-                mensaje = `<div class="incorrecto">
-                    <h3>Obtuviste ${puntuacion} de ${totalPreguntas} puntos (${porcentaje.toFixed(0)}%)</h3>
-                    <p>Te recomiendo revisar la información sobre voleibol en la página principal.</p>
-                </div>`;
+                resultado.className = "resultado incorrecto"; 
+                resultado.innerHTML = "<h3>Tienes " + puntos + " de " + total + " puntos. Puedes mejorar.</h3>";
             }
             
-            resultadoDiv.innerHTML = mensaje;
-            resultadoDiv.style.display = "block";
-            
-            // Desplazar hacia el resultado
-            resultadoDiv.scrollIntoView({ behavior: 'smooth' });
+            resultado.style.display = "block";
         }
     </script>
 </body>
