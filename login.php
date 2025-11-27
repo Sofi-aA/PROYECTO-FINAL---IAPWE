@@ -69,6 +69,8 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
             border-top: 1px solid #ccc;
         }
     </style>
+
+<link rel="icon" href="img/s.jpg">
 </head>
 <body>
 

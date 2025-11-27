@@ -22,6 +22,7 @@ if(file_exists($fichero)){
 <html>
 <head>
     <title>Error</title>
+    <link rel="icon" href="img/s.jpg">
     <style>
         body { font-family: Arial; max-width: 500px; margin: 100px auto; padding: 20px; text-align: center; }
         .error { background: #ffebee; padding: 20px; border-radius: 5px; }

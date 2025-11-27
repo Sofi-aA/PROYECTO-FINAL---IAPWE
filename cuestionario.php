@@ -28,6 +28,7 @@ $css = "$modo.css";
 <head>
     <title>Cuestionario de Voleibol</title>
     <link rel="stylesheet" href="<?= $css ?>">
+    <link rel="icon" href="img/s.jpg">
     <style>
         body { font-family: Arial; max-width: 800px; margin: 0 auto; padding: 20px; }
         .header { background: #007bff; color: white; padding: 15px; text-align: center; }
