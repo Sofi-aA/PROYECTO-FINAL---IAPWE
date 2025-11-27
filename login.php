@@ -3,6 +3,7 @@ session_start();
 
 $idioma = $_GET["idioma"] ?? "es";
 $fichero = "$idioma.php";
+$sexo = $_GET["genero"] ?? "mujer";
 
 if(file_exists($fichero)){
     require $fichero;
@@ -12,6 +13,7 @@ if(file_exists($fichero)){
 
 $usuario_correcto = "Sofi";
 $contraseña_correcta = "1234";
+$genero_correcto = "Mujer";
 
 if(!isset($_SESSION['intentos'])){
     $_SESSION['intentos'] = 0;
@@ -22,6 +24,7 @@ $mensaje_error = "";
 if($_SERVER['REQUEST_METHOD'] == 'POST'){
     $usuario = $_POST["user"] ?? "";
     $contraseña = $_POST["pass"] ?? "";
+    $_SESSION['genero'] = $sexo;
     
     if($_SESSION['intentos'] >= 3){
         header("location: error.php");
@@ -45,6 +48,9 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
         }
     }
 }
+
+
+
 ?>
 
 <html>
@@ -67,8 +73,8 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 <body>
 
     <div style="text-align: center; margin: 20px 0;">
-        <a href="?idioma=es">ES</a> | 
-        <a href="?idioma=en">EN</a> | 
+        <a href="?idioma=es">ES</a>  
+        <a href="?idioma=en">EN</a>  
         <a href="?idioma=pt">PT</a>
     </div>
 
@@ -81,6 +87,20 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
         <p><strong><?= $traducciones['contraseña'] ?>:</strong></p>
         <input type="password" name="pass" required>
         
+
+<p><strong><?= $traducciones['sexo'] ?>:</strong></p>        
+<select name="genero">
+
+<option>Seleccionar</option>
+
+<option>Mujer</option>
+
+<option>Hombre</option>
+
+<option>Gay</option>
+
+</select>
+
         <br><br>
         <button type="submit">Entrar</button>
     </form>

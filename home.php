@@ -22,7 +22,13 @@ if(!isset($_SESSION['logueado']) || $_SESSION['logueado'] !== true){
  
 
 $modo = $_SESSION["modo"] ?? "claro"; 
+$genero = $_SESSION["genero"] ?? "mujer"; 
 $css = "$modo.css"; 
+
+
+
+
+
 
 ?>
 
@@ -75,7 +81,7 @@ $css = "$modo.css";
     </div>
 
     <div class="contenido">
-        <h2>Información sobre Voleibol</h2>
+        <h2>Información sobre Voleibol - <?php echo $genero; ?></h2>
         
         <p>El voleibol es un deporte que se juega con dos equipos de 6 jugadores.</p>
         

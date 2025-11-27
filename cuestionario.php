@@ -150,7 +150,7 @@ $css = "$modo.css";
                 resultado.innerHTML = "<h3>¡Bien! Tienes " + puntos + " de " + total + " puntos</h3>";
             } else {
                 resultado.className = "resultado incorrecto"; 
-                resultado.innerHTML = "<h3>Tienes " + puntos + " de " + total + " puntos. Puedes mejorar.</h3>";
+                resultado.innerHTML = "<h3>Tienes " + puntos + " de " + total + " puntos. NO ERA TAN DIFICIL</h3>";
             }
             
             resultado.style.display = "block";
