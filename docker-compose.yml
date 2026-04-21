@@ -6,12 +6,12 @@ services:       #Definición de cada contenedor que vamos a levantar
     ports:
       - "8080:80"        #Mapear el puerto 80 del contenedor al 8080 del PC
     volumes:
-      - "C:/Users/sofia/OneDrive/Documentos/Sofi_Levy-main:/var/www/html"    #Carpeta local a carpeta raíz web
+      - "C:/Users/sofia/OneDrive/Documentos/PROYECTO-FINAL---IAPWE-main"    #Carpeta local a carpeta raíz web
   bbdd:           #Contenedor MySQL, con contraseña y base de datos inicial
     image: mysql:5.7 #Imagen de Docker que usaremos para la BBDD
     environment: 
       MYSQL_ROOT_PASSWORD: root #Nombre de la BBDD y contraseña que queráis darle
-      MYSQL_DATABASE: biblioteca 
+      MYSQL_DATABASE: cuestionario 
     volumes:
       - db_data:/var/lib/mysql  #Aquí se guardan los datos de MySQL
 
